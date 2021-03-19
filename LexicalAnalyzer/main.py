@@ -147,7 +147,7 @@ def actualize_lexical_parsing_list(current_tokens_list, token_index, source_code
     if current_tokens_list:
         for current_token in current_tokens_list:
             for i_idx in range(current_token[0], min(FILENAME_LEN-1,current_token[1]+1)):
-                if lexical_parsing_list[i_idx] == -1:# or token_index == 21 or token_index == 19:
+                if lexical_parsing_list[i_idx] == -1:
                     lexical_parsing_list[i_idx] = token_index
 
 
@@ -328,9 +328,9 @@ def return_errors_from_source_code(source_code, option):
     found_errors_list = []
     if option == "post_scan":
         # identifier = orice ce nu e keyword, comment, operator, separator
-        if source_code[0] == '=':
+        if source_code.trim()[0] == '=':
             found_errors_list.append((0,0,source_code[0]))
-        if source_code[-1] == '=':
+        if source_code.trim()[-1] == '=':
             found_errors_list.append((len(source_code)-1, len(source_code)-1, source_code[len(source_code)-1]))
 
         for i_idx in range(1, len(source_code)-1):
@@ -355,6 +355,38 @@ def return_errors_from_source_code(source_code, option):
                 found_errors_list.append((i_idx, right_idx, source_code[i_idx:right_idx + 1]))
 
     if option == "pre_scan":
+        pattern = re.compile(r'\"\"\"')
+        cnt = 0
+        for matched_pattern in re.finditer(pattern, source_code):
+            cnt += 1
+            s = matched_pattern.start()
+            e = matched_pattern.end()
+
+        if cnt % 2 == 1:
+            for matched_pattern in re.finditer(pattern, source_code):
+                cnt -= 1
+                s = matched_pattern.start()
+                e = matched_pattern.end()
+                if cnt == 0:
+                    found_errors_list.append(
+                        (s, e, source_code[s:e]))
+
+        pattern = re.compile(r"\'\'\'")
+        cnt = 0
+        for matched_pattern in re.finditer(pattern, source_code):
+            cnt += 1
+            s = matched_pattern.start()
+            e = matched_pattern.end()
+
+        if cnt % 2 == 1:
+            for matched_pattern in re.finditer(pattern, source_code):
+                cnt -= 1
+                s = matched_pattern.start()
+                e = matched_pattern.end()
+                if cnt == 0:
+                    found_errors_list.append(
+                        (s, e, source_code[s:e]))
+
         cnt = 0
         last_idx = 0
         idxs_list = []
@@ -366,16 +398,16 @@ def return_errors_from_source_code(source_code, option):
                 last_idx = i_idx
                 idxs_list.append(last_idx)
             if source_code[i_idx] == ')':
-                if cnt >= 1:
-                    cnt -= 1
+                cnt -= 1
+                if cnt >= 0:
                     last_idx = i_idx
                     idxs_list.append(last_idx)
                 else:
-                    cnt -= 1
                     found_errors_list.append((last_idx, i_idx, source_code[last_idx:i_idx+1]))
                     last_idx = i_idx
                     idxs_list.append(last_idx)
-        if cnt!=0:
+
+        if cnt!=0 and len(idxs_list)>=2:
             found_errors_list.append(
                 (idxs_list[-2], idxs_list[-1], source_code[idxs_list[-2]:idxs_list[-1]]))
         cnt = 0
@@ -386,8 +418,8 @@ def return_errors_from_source_code(source_code, option):
                 last_idx = i_idx
                 idxs_list.append(last_idx)
             if source_code[i_idx] == ']':
+                cnt -= 1
                 if cnt >= 0:
-                    cnt -= 1
                     last_idx = i_idx
                     idxs_list.append(last_idx)
                 else:
@@ -395,7 +427,7 @@ def return_errors_from_source_code(source_code, option):
                         (last_idx, i_idx, source_code[last_idx:i_idx + 1]))
                     last_idx = i_idx
                     idxs_list.append(last_idx)
-        if cnt!=0:
+        if cnt!=0 and len(idxs_list)>=2:
             found_errors_list.append(
                 (idxs_list[-2], idxs_list[-1], source_code[idxs_list[-2]:idxs_list[-1]]))
         cnt = 0
@@ -406,8 +438,8 @@ def return_errors_from_source_code(source_code, option):
                 last_idx = i_idx
                 idxs_list.append(last_idx)
             if source_code[i_idx] == '"""':
+                cnt -= 1
                 if cnt >= 0:
-                    cnt -= 1
                     last_idx = i_idx
                     idxs_list.append(last_idx)
                 else:
@@ -415,7 +447,7 @@ def return_errors_from_source_code(source_code, option):
                         (last_idx, i_idx, source_code[last_idx:i_idx + 1]))
                     last_idx = i_idx
                     idxs_list.append(last_idx)
-        if cnt!=0:
+        if cnt!=0 and len(idxs_list)>=2:
             found_errors_list.append(
                 (idxs_list[-2], idxs_list[-1], source_code[idxs_list[-2]:idxs_list[-1]]))
         cnt = 0
@@ -435,7 +467,7 @@ def return_errors_from_source_code(source_code, option):
                         (last_idx, i_idx, source_code[last_idx:i_idx + 1]))
                     last_idx = i_idx
                     idxs_list.append(last_idx)
-        if cnt!=0:
+        if cnt!=0 and len(idxs_list)>=2:
             found_errors_list.append(
                 (idxs_list[-2], idxs_list[-1], source_code[idxs_list[-2]:idxs_list[-1]]))
         cnt = 0
@@ -446,8 +478,8 @@ def return_errors_from_source_code(source_code, option):
                 last_idx = i_idx
                 idxs_list.append(last_idx)
             if source_code[i_idx] == '"':
+                cnt -= 1
                 if cnt >= 0:
-                    cnt -= 1
                     last_idx = i_idx
                     idxs_list.append(last_idx)
                 else:
@@ -455,7 +487,7 @@ def return_errors_from_source_code(source_code, option):
                         (last_idx, i_idx, source_code[last_idx:i_idx + 1]))
                     last_idx = i_idx
                     idxs_list.append(last_idx)
-        if cnt!=0:
+        if cnt!=0 and len(idxs_list)>=2:
             found_errors_list.append(
                 (idxs_list[-2], idxs_list[-1], source_code[idxs_list[-2]:idxs_list[-1]]))
         cnt = 0
@@ -466,15 +498,15 @@ def return_errors_from_source_code(source_code, option):
                 last_idx = i_idx
                 idxs_list.append(last_idx)
             if source_code[i_idx] == "'":
+                cnt -= 1
                 if cnt >= 0:
-                    cnt -= 1
                     last_idx = i_idx
                     idxs_list.append(last_idx)
                 else:
                     found_errors_list.append((i_idx, i_idx, source_code[last_idx: i_idx+1]))
                     last_idx = i_idx
                     idxs_list.append(last_idx)
-        if cnt!=0:
+        if cnt!=0 and len(idxs_list)>=2:
             found_errors_list.append(
                 (idxs_list[-2], idxs_list[-1], source_code[idxs_list[-2]:idxs_list[-1]]))
     return found_errors_list
@@ -484,6 +516,7 @@ def add_bottom_border(PYTHON_FILENAME):
     file = open(PYTHON_FILENAME, 'a')
     file.write("\n\n")
     file.close()
+
 
 def main():
     global lexical_parsing_list, lexical_parsing_matrix, lexical_analyzer
@@ -501,6 +534,7 @@ def main():
     lexical_parsing_list = [-1 for i in range(len(source_code))]
 
     found_errors_list = return_errors_from_source_code(source_code, option="pre_scan")
+
     actualize_lexical_parsing_list(found_errors_list,
                                    PYTHON_TOKEN_TYPES_DICT['lexical_error'])
 
@@ -527,11 +561,9 @@ def main():
                                    PYTHON_TOKEN_TYPES_DICT['separator'],
                                    source_code)
 
-
     found_keywords_list = return_keywords_from_source_code(source_code)
     actualize_lexical_parsing_list(found_keywords_list,
                                    PYTHON_TOKEN_TYPES_DICT['keyword'])
-
 
     found_operators_list = return_operators_from_source_code(source_code)
 
@@ -601,8 +633,15 @@ def main():
             col += 1
         row += 1
 
+    found_errors_list = return_errors_from_source_code(source_code,
+                                                       option="pre_scan")
+
+    actualize_lexical_parsing_list(found_errors_list,
+                                   PYTHON_TOKEN_TYPES_DICT['lexical_error'])
+
     print_lexical_parsing_list(lexical_parsing_matrix)
     global FINAL_LEXICAL_LIST
+
     write_final_lexical_list()
 
 
