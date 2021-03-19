@@ -1,0 +1,93 @@
+Token: {def}, type: keyword, starting (col, row): (0, 0); ending (col, row): (0, 2); length of token: 3
+Token: {sub}, type: identifier, starting (col, row): (0, 4); ending (col, row): (0, 6); length of token: 3
+Token: {(}, type: separator, starting (col, row): (0, 7); ending (col, row): (0, 7); length of token: 1
+Token: {a}, type: identifier, starting (col, row): (0, 8); ending (col, row): (0, 8); length of token: 1
+Token: {,}, type: separator, starting (col, row): (0, 9); ending (col, row): (0, 9); length of token: 1
+Token: {b}, type: identifier, starting (col, row): (0, 10); ending (col, row): (0, 10); length of token: 1
+Token: {)}, type: separator, starting (col, row): (0, 11); ending (col, row): (0, 11); length of token: 1
+Token: {:}, type: separator, starting (col, row): (0, 12); ending (col, row): (0, 12); length of token: 1
+Token: {while}, type: keyword, starting (col, row): (1, 4); ending (col, row): (1, 8); length of token: 5
+Token: {<}, type: operator, starting (col, row): (1, 11); ending (col, row): (1, 11); length of token: 1
+Token: {:}, type: separator, starting (col, row): (1, 13); ending (col, row): (1, 13); length of token: 1
+Token: {print}, type: identifier, starting (col, row): (2, 8); ending (col, row): (2, 12); length of token: 5
+Token: {(}, type: separator, starting (col, row): (2, 13); ending (col, row): (2, 13); length of token: 1
+Token: {a}, type: identifier, starting (col, row): (2, 14); ending (col, row): (2, 14); length of token: 1
+Token: {)}, type: separator, starting (col, row): (2, 15); ending (col, row): (2, 15); length of token: 1
+Token: {a}, type: identifier, starting (col, row): (3, 1); ending (col, row): (3, 1); length of token: 1
+Token: {=}, type: operator, starting (col, row): (3, 10); ending (col, row): (3, 10); length of token: 1
+Token: {def}, type: keyword, starting (col, row): (6, 0); ending (col, row): (6, 2); length of token: 3
+Token: {main}, type: identifier, starting (col, row): (6, 4); ending (col, row): (6, 7); length of token: 4
+Token: {(}, type: separator, starting (col, row): (6, 8); ending (col, row): (6, 8); length of token: 1
+Token: {)}, type: separator, starting (col, row): (6, 9); ending (col, row): (6, 9); length of token: 1
+Token: {:}, type: separator, starting (col, row): (6, 10); ending (col, row): (6, 10); length of token: 1
+Token: {a}, type: identifier, starting (col, row): (7, 1); ending (col, row): (7, 1); length of token: 1
+Token: {=}, type: operator, starting (col, row): (7, 6); ending (col, row): (7, 6); length of token: 1
+Token: {4}, type: int, starting (col, row): (7, 8); ending (col, row): (7, 8); length of token: 1
+Token: {b}, type: identifier, starting (col, row): (8, 4); ending (col, row): (8, 4); length of token: 1
+Token: {=}, type: operator, starting (col, row): (8, 6); ending (col, row): (8, 6); length of token: 1
+Token: {5}, type: int, starting (col, row): (8, 8); ending (col, row): (8, 8); length of token: 1
+Token: {c}, type: identifier, starting (col, row): (9, 4); ending (col, row): (9, 4); length of token: 1
+Token: {=}, type: operator, starting (col, row): (9, 6); ending (col, row): (9, 6); length of token: 1
+Token: {"my first string"}, type: str, starting (col, row): (9, 8); ending (col, row): (9, 24); length of token: 17
+Token: {d}, type: identifier, starting (col, row): (10, 1); ending (col, row): (10, 1); length of token: 1
+Token: {=}, type: operator, starting (col, row): (10, 6); ending (col, row): (10, 6); length of token: 1
+Token: {5.63}, type: int, starting (col, row): (10, 8); ending (col, row): (10, 11); length of token: 4
+Token: {d}, type: identifier, starting (col, row): (11, 4); ending (col, row): (11, 4); length of token: 1
+Token: {"""my   second string"""}, type: str, starting (col, row): (11, 7); ending (col, row): (11, 30); length of token: 24
+Token: {dae}, type: identifier, starting (col, row): (12, 1); ending (col, row): (12, 1); length of token: 3
+Token: {=}, type: operator, starting (col, row): (12, 8); ending (col, row): (12, 8); length of token: 1
+Token: {9.99}, type: int, starting (col, row): (12, 10); ending (col, row): (12, 13); length of token: 4
+Token: {print}, type: identifier, starting (col, row): (13, 4); ending (col, row): (13, 8); length of token: 5
+Token: {(}, type: separator, starting (col, row): (13, 9); ending (col, row): (13, 9); length of token: 1
+Token: {a}, type: identifier, starting (col, row): (13, 11); ending (col, row): (13, 11); length of token: 1
+Token: {=}, type: operator, starting (col, row): (13, 13); ending (col, row): (13, 13); length of token: 1
+Token: {)}, type: separator, starting (col, row): (13, 17); ending (col, row): (13, 17); length of token: 1
+Token: {print}, type: identifier, starting (col, row): (14, 4); ending (col, row): (14, 8); length of token: 5
+Token: {(}, type: separator, starting (col, row): (14, 9); ending (col, row): (14, 9); length of token: 1
+Token: {+}, type: operator, starting (col, row): (14, 12); ending (col, row): (14, 12); length of token: 1
+Token: {,}, type: separator, starting (col, row): (14, 15); ending (col, row): (14, 15); length of token: 1
+Token: {-}, type: operator, starting (col, row): (14, 18); ending (col, row): (14, 18); length of token: 1
+Token: {,}, type: separator, starting (col, row): (14, 20); ending (col, row): (14, 20); length of token: 1
+Token: {a}, type: identifier, starting (col, row): (14, 22); ending (col, row): (14, 22); length of token: 1
+Token: {*}, type: operator, starting (col, row): (14, 24); ending (col, row): (14, 24); length of token: 1
+Token: {,}, type: separator, starting (col, row): (14, 27); ending (col, row): (14, 27); length of token: 1
+Token: {a}, type: identifier, starting (col, row): (14, 29); ending (col, row): (14, 29); length of token: 1
+Token: {/}, type: operator, starting (col, row): (14, 31); ending (col, row): (14, 31); length of token: 1
+Token: {)}, type: separator, starting (col, row): (14, 34); ending (col, row): (14, 34); length of token: 1
+Token: {# this is a single line comment}, type: comment, starting (col, row): (14, 36); ending (col, row): (14, 66); length of token: 31
+Token: {print}, type: identifier, starting (col, row): (15, 4); ending (col, row): (15, 8); length of token: 5
+Token: {(}, type: separator, starting (col, row): (15, 9); ending (col, row): (15, 9); length of token: 1
+Token: {*}, type: operator, starting (col, row): (15, 12); ending (col, row): (15, 12); length of token: 1
+Token: {)}, type: separator, starting (col, row): (15, 15); ending (col, row): (15, 15); length of token: 1
+Token: {"""
+        Second multi
+        line comment
+        """}, type: comment, starting (col, row): (17, 4); ending (col, row): (20, 10); length of token: 57
+Token: {'''
+     First
+     multi-line comment
+     '''}, type: comment, starting (col, row): (22, 4); ending (col, row): (25, 7); length of token: 47
+Token: {for}, type: keyword, starting (col, row): (27, 4); ending (col, row): (27, 6); length of token: 3
+Token: {i}, type: identifier, starting (col, row): (27, 8); ending (col, row): (27, 8); length of token: 1
+Token: {in}, type: keyword, starting (col, row): (27, 10); ending (col, row): (27, 11); length of token: 2
+Token: {range}, type: identifier, starting (col, row): (27, 13); ending (col, row): (27, 17); length of token: 5
+Token: {(}, type: separator, starting (col, row): (27, 18); ending (col, row): (27, 18); length of token: 1
+Token: {a}, type: identifier, starting (col, row): (27, 19); ending (col, row): (27, 19); length of token: 1
+Token: {)}, type: separator, starting (col, row): (27, 20); ending (col, row): (27, 20); length of token: 1
+Token: {:}, type: separator, starting (col, row): (27, 21); ending (col, row): (27, 21); length of token: 1
+Token: {print}, type: identifier, starting (col, row): (28, 8); ending (col, row): (28, 12); length of token: 5
+Token: {(}, type: separator, starting (col, row): (28, 13); ending (col, row): (28, 13); length of token: 1
+Token: {i}, type: identifier, starting (col, row): (28, 14); ending (col, row): (28, 14); length of token: 1
+Token: {)}, type: separator, starting (col, row): (28, 15); ending (col, row): (28, 15); length of token: 1
+Token: {sub}, type: identifier, starting (col, row): (29, 4); ending (col, row): (29, 6); length of token: 3
+Token: {(}, type: separator, starting (col, row): (29, 7); ending (col, row): (29, 7); length of token: 1
+Token: {a}, type: identifier, starting (col, row): (29, 8); ending (col, row): (29, 8); length of token: 1
+Token: {,}, type: separator, starting (col, row): (29, 9); ending (col, row): (29, 9); length of token: 1
+Token: {)}, type: separator, starting (col, row): (29, 12); ending (col, row): (29, 12); length of token: 1
+Token: {if}, type: keyword, starting (col, row): (31, 0); ending (col, row): (31, 1); length of token: 2
+Token: {__name__}, type: identifier, starting (col, row): (31, 3); ending (col, row): (31, 10); length of token: 8
+Token: {=}, type: operator, starting (col, row): (31, 12); ending (col, row): (31, 12); length of token: 1
+Token: {'__main__'}, type: str, starting (col, row): (31, 15); ending (col, row): (31, 24); length of token: 10
+Token: {main}, type: identifier, starting (col, row): (32, 4); ending (col, row): (32, 7); length of token: 4
+Token: {(}, type: separator, starting (col, row): (32, 8); ending (col, row): (32, 8); length of token: 1
+Token: {)}, type: separator, starting (col, row): (32, 9); ending (col, row): (32, 9); length of token: 1
