@@ -35,6 +35,3 @@ There are no external dependencies required to use the Python Lexical Analyzer. 
 ## Contributing
 
 Contributions to this repository are welcome. If you encounter any issues or have suggestions for improvement, please feel free to open an issue or submit a pull request.
-
-
-[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://stand-with-ukraine.pp.ua)
